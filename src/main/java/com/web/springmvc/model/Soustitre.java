@@ -1,11 +1,13 @@
 package com.web.springmvc.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "soustitre")
 
-public class Soustitre{
+public class Soustitre implements Serializable{
 
 @Id
 @GeneratedValue

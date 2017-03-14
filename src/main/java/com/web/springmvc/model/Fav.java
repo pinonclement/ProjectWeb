@@ -1,6 +1,6 @@
 package com.web.springmvc.model;
 
-
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="fav")
 
-public class Fav {
+public class Fav implements Serializable {
 	@Id
 	@Column(name="userid")
 	private int userid;

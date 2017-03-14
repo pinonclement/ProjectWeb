@@ -1,12 +1,13 @@
 package com.web.springmvc.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
 @Entity
 @Table(name="user")
 
-public class User {
+public class User implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name="userid")
