@@ -9,14 +9,15 @@ import javax.persistence.*;
 
 public class User implements Serializable {
 	@Id
-	@GeneratedValue
 	@Column(name="userid")
 	private int userid;
 	
+	@Column(name="email")
+	private String email;
+	
 	@Column(name="motdepasse")
 	private String motdepasse;
-
-
+	
 	@Column(name="pseudo")
 	private String pseudo;
 

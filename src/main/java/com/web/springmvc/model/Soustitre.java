@@ -18,17 +18,17 @@ private int sstitreid;
 @Column(name="videoid")
 private int videoid;
 
-@Column(name="sousttitre")
-private String sousttitre ;
+@Column(name="nom")
+private String nom ;
 
 @Column(name="positif")
 private int positif;
 
-@Column(name="link")
-private int link;
-
 @Column(name="negatif")
 private int negatif;
+
+@Column(name="link")
+private int link;
 
 public int getLink() {
 	return link;
@@ -54,12 +54,12 @@ public void setVideoid(int videoid) {
 	this.videoid = videoid;
 }
 
-public String getSousttitre() {
-	return sousttitre;
+public String getNom() {
+	return nom;
 }
 
-public void setSousttitre(String sousttitre) {
-	this.sousttitre = sousttitre;
+public void setNom(String nom) {
+	this.nom = nom;
 }
 
 public int getPositif() {

@@ -30,22 +30,12 @@ private boolean issubtitled;
 @Column(name="videoname")
 private String videoname;
 
-@Column(name="japanname")
-private String japanname;
-
 @Column(name="link")
 private String link;
 
 @Column(name="arc")
 private String arc;
 
-public String getJapanname() {
-	return japanname;
-}
-
-public void setJapanname(String japanname) {
-	this.japanname = japanname;
-}
 
 public int getVideoid() {
 	return videoid;
