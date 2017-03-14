@@ -2,9 +2,11 @@ package com.web.springmvc.dao;
 
 import java.util.List;
 
-import model.Fav;
-import model.User;
-import model.Video;
+import com.web.springmvc.model.Fav;
+import com.web.springmvc.model.User;
+import com.web.springmvc.model.Video;
+
+
 
 public interface FavDao {
 	

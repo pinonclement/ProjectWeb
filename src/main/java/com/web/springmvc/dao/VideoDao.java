@@ -1,6 +1,6 @@
 package com.web.springmvc.dao;
 
-import model.Video;
+import com.web.springmvc.model.Video;
 
 public interface VideoDao {
 	

@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({ "com.websystique.springmvc.configuration" })
+@ComponentScan({ "com.web.springmvc.configuration" })
 @PropertySource(value = { "classpath:application.properties" })
 public class HibernateConfiguration {
 
@@ -31,7 +31,7 @@ public class HibernateConfiguration {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] { "com.websystique.springmvc.model" });
+        sessionFactory.setPackagesToScan(new String[] { "com.web.springmvc.model" });
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
      }

@@ -2,7 +2,7 @@ package com.web.springmvc.dao;
 
 import java.util.List;
 
-import model.Note;
+import com.web.springmvc.model.Note;
 
 public interface NoteDao {
 	

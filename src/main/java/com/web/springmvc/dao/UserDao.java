@@ -3,7 +3,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import model.User;
+import com.web.springmvc.model.User;
 @Repository("FavDao")
 public interface UserDao {
 	

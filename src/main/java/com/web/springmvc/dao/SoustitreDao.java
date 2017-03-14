@@ -2,7 +2,7 @@ package com.web.springmvc.dao;
 
 import java.util.List;
 
-import model.Soustitre;
+import com.web.springmvc.model.Soustitre;
 
 public interface SoustitreDao {
 	
