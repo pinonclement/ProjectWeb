@@ -6,13 +6,11 @@ import com.web.springmvc.model.Note;
 
 public interface NoteDao {
 	
-	void insert(Note note);
+	void insertNote(Note note);
 	
-	void delete(Note note);
+	void deleteNote(int userid, int sstitreid);
 	
-	void update (Note note);
-	
-	List<Note> findbySstritre();
+	List<Note> findbySstritre(int sstitreid);
 	
 
 

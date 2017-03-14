@@ -12,12 +12,12 @@ public interface FavDao {
 	
 	void insert(Fav fav);
 	
-	void delete(Fav fav);
+	void delete(int userid, int idvideo);
 	
 	
-	List<User> findbyVideo();
+	List<Fav> findbyVideo(int idvideo);
 	
-	List<Video> findbyUser();
+	List<Fav> findbyUser(int iduser);
 	
 
 }

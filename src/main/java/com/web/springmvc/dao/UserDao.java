@@ -7,9 +7,9 @@ import com.web.springmvc.model.User;
 @Repository("FavDao")
 public interface UserDao {
 	
-	void newUser(User user);
+	void insert(User user);
 	
-	void delete (User user);
+	void deleteUser (int userid);
 	
 	User findUserByPseudo(String pseudo);
 	

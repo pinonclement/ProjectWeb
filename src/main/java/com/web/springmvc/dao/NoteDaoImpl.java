@@ -3,30 +3,35 @@ package com.web.springmvc.dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import com.web.springmvc.model.Note;
 @Repository("NoteDao")
-public class NoteDaoImpl  implements NoteDao {
+public class NoteDaoImpl extends AbstractDao<Integer,Note> implements NoteDao {
 
-	public void insert(Note note) {
-		// TODO Auto-generated method stub
+	public void insertNote(Note note) {
+		persist(note);
 		
 	}
 
-	public void delete(Note note) {
-		// TODO Auto-generated method stub
+	public void deleteNote(int userid, int sstitreid) {
+		Query query = getSession().createSQLQuery("delete from Note where userid = :userid and sstitreid = :sstitreid");
+		query.setInteger("userid", userid);
+		query.setInteger("sstitreid", sstitreid);
+		query.executeUpdate();
+		
 		
 	}
 
-	public void update(Note note) {
-		// TODO Auto-generated method stub
-		
-	}
 
-	public List<Note> findbySstritre() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Note> findbySstritre(int sstitreid) {
+		Criteria criteria = createEntityCriteria();
+		criteria.add(Restrictions.eq("sstitreid", sstitreid));
+		return (List<Note>) criteria.list();
+	
 	}
 
 	

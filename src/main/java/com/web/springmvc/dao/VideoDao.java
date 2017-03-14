@@ -4,9 +4,9 @@ import com.web.springmvc.model.Video;
 
 public interface VideoDao {
 	
-	void newVideo (Video video);
+	void insert(Video video);
 	
-	 Video getVideoById ( int id);
+	Video getVideoById (int id);
 	
 	void deleteVideo(int id);
 	

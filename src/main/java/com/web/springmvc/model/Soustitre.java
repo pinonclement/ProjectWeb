@@ -24,8 +24,19 @@ private String sousttitre ;
 @Column(name="positif")
 private int positif;
 
+@Column(name="link")
+private int link;
+
 @Column(name="negatif")
 private int negatif;
+
+public int getLink() {
+	return link;
+}
+
+public void setLink(int link) {
+	this.link = link;
+}
 
 public int getSstitreid() {
 	return sstitreid;

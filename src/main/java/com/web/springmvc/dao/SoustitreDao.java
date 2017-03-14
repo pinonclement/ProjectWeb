@@ -6,13 +6,13 @@ import com.web.springmvc.model.Soustitre;
 
 public interface SoustitreDao {
 	
-	void insert (Soustitre  soustitre);
+	void insertSoustitre (Soustitre  soustitre);
 	
-	void delete (Soustitre  soustitre);
+	void deleteSoustitre (int sstitreid);
 	
 	void update  (Soustitre  soustitre);
 	
-	List<Soustitre> findbyVideos();
+	List<Soustitre> findbyVideos(int videoid);
 
 	
 	
