@@ -15,22 +15,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.web.springmvc.dao.VideoDao;
+import com.web.springmvc.model.Video;
 
 
 @Controller
 @RequestMapping("/")
+
 public class AppController {
 
+	@Autowired
+	VideoDao dao;
+	
 
+	@Autowired
+	MessageSource messageSource;
+	@RequestMapping(value = { "/"}, method = RequestMethod.GET)
 
-	/*
-	 * This method will list all existing employees.
-	 */
-	@RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)
-	public String listEmployees(ModelMap model) {
+		public String listVideo(ModelMap model) {
 
-		
-		return "/";
+			List<Video> videos = dao.getAllVideos();
+			model.addAttribute("videos", videos);
+	
+		return "hello";
 	}
 
 }

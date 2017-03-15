@@ -159,6 +159,28 @@
                     </div>
                 </div>
             </div>
+            
+            <h2>List of Employees</h2>	
+	<table>
+		<tr>
+			<td>NAME</td><td>Joining Date</td><td>Salary</td><td>SSN</td><td></td>
+		</tr>
+		<c:forEach items="${videos}" var="video">
+			<tr>
+			<td>${video.videoid}</td>
+			<td>${employee.nom}</td>
+			<td>${employee.link}</td>
+			<td>${employee.videoname}</td>
+			
+			
+			</tr>
+		</c:forEach>
+	</table>
+	<br/>
+	<a href="<c:url value='/new' />">Add New Employee</a>
+	
+	
+
 
 <spring:url value="/resources/core/js/jquery-1.9.1.js" var="jqueryjs" />
  
