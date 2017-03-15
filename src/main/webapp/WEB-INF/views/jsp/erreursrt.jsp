@@ -72,8 +72,6 @@
                                         <ul class="nav">
                                             <li ><a href="index.html">ACCUEIL</a></li>
 
-                                            <li class="active"><a href="${connexion}">Se connecter</a></li>
-                                            <li ><a href="${inscription}">S'enregistrer</a></li>
                                         </ul>
                                     </div><!--/.nav-collapse -->
                                 </div>

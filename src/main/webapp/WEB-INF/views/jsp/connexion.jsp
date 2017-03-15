@@ -25,6 +25,7 @@
 		
 		<spring:url value="/connexion" var="connexion" />
         <spring:url value="/inscription" var="inscription" />
+         <spring:url value="/" var="hello" />
         <spring:url value="/" var="index" />
         <spring:url value="/mdpoublie" var="mdpoublie" />
 		
@@ -72,7 +73,7 @@
                                     </a>
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
-                                            <li ><a href="index.html">ACCUEIL</a></li>
+                                           <li ><a href="${hello}">ACCUEIL</a></li>
 
                                             <li class="active"><a href="${connexion}">Se connecter</a></li>
                                             <li ><a href="${inscription}">S'enregistrer</a></li>

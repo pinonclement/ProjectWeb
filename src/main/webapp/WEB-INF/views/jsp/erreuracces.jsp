@@ -7,12 +7,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
+         <jsp:directive.page contentType="text/html;charset=UTF-8" />
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <jsp:directive.page contentType="text/html;charset=UTF-8" />
-        
         <title></title>
-        
-      <spring:url value="/resources/core/css/bootstrap.css" var="bootstrapCss" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+       
+      	<spring:url value="/resources/core/css/bootstrap.css" var="bootstrapCss" />
 		<spring:url value="/resources/core/css/bootstrap-responsive.css" var="responsiveCss" />
 		
 		 
@@ -20,13 +22,11 @@
 		
 		<spring:url value="/resources/core/css/font-awesome.css" var="font1css" />
 		<spring:url value="/resources/core/css/font-awesome-ie7.css" var="font2css" />
-		
+
 		<spring:url value="/connexion" var="connexion" />
         <spring:url value="/inscription" var="inscription" />
         <spring:url value="/" var="index" />
         <spring:url value="/mdpoublie" var="mdpoublie" />
-
-		
 		
 		<link href="${bootstrapCss}" rel="stylesheet" />
 		<link href="${responsiveCss}" rel="stylesheet" />
@@ -35,11 +35,13 @@
         <link rel="stylesheet" href="${font1css}">
         
         <link rel="stylesheet" href="${font2css}">
-
+       
        
        <spring:url value="/resources/core/js/modernizr-2.6.2-respond-1.1.0.min.js" var="modernjs" />
  
 		<script src="${modernjs}"></script>
+		
+	
     </head>
     <body>
 	   
@@ -48,7 +50,8 @@
         <![endif]-->
 
         <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-			 <spring:url value="/resources/core/picture/gudetama.png" var="gudetamapng" />
+                 <spring:url value="/resources/core/picture/gudetama.png" var="gudetamapng" />
+
 				<center><img  src="${gudetamapng}" alt="gudetama" align="middle" style="width:482px;height:169px;"></center>
             <div class="container">
 
@@ -67,6 +70,9 @@
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
                                             <li ><a href="${index}">ACCUEIL</a></li>
+
+                                            <li><a href="${connexion}">Se connecter</a></li>
+                                            <li class="active"><a href="#">S'enregistrer</a></li>
                                         </ul>
                                     </div><!--/.nav-collapse -->
                                 </div>
@@ -85,29 +91,16 @@
           </select>
           </label>
           </div>
-
-                            </div>
+      </div>
                         </div>
-						  <div class="featured-heading">
-                            <div class="row-fluid">
-                                <div class="span10 offset1">
-                                    <h1>#pseudo du mec#</h1>
-                                </div>
-                            </div>
-                        </div>
+						
 						 <div class="featured-heading">
                             <div class="row-fluid">
                                 <div class="span10 offset1">
-                                    <h1>Changer votre mot de passe</h1>
+                                    <h1>Vous n'avez pas accès à cette page</h1>
                                     <section class="webdesigntuts-workshop">
-	<form action="" method="">		    
-		<input type="search" placeholder="nouveau pass..">	
-			<input type="search" placeholder="confirmation pass..">		
 
-
-	</form>
-</section>
-                                    <a href="#" class="btn">envoyer</a>
+                                   
 
 
 
@@ -119,6 +112,7 @@
 <spring:url value="/resources/core/js/bootstrap.js" var="bootstrapjs" />
  
 <script src="${bootstrapjs}"></script>
+
 <script>
 $('#myCarousel').carousel({
     interval: 1800
