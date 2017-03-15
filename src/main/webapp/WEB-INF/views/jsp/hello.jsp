@@ -168,9 +168,9 @@
 		<c:forEach items="${videos}" var="video">
 			<tr>
 			<td>${video.videoid}</td>
-			<td>${employee.nom}</td>
-			<td>${employee.link}</td>
-			<td>${employee.videoname}</td>
+			<td>${video.nom}</td>
+			<td>${video.link}</td>
+			<td>${video.videoname}</td>
 			
 			
 			</tr>

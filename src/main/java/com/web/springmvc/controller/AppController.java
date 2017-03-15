@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.web.springmvc.dao.VideoDao;
 import com.web.springmvc.model.Video;
+import com.web.springmvc.video.AppManagedDownload;
 
 
 @Controller
@@ -36,6 +37,7 @@ public class AppController {
 
 			List<Video> videos = dao.getAllVideos();
 			model.addAttribute("videos", videos);
+			AppManagedDownload.main(new String[] { "http://www.youtube.com/watch?v=fcriZ9PECf0", "/Bureau" });
 	
 		return "hello";
 	}
