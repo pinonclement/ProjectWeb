@@ -4,16 +4,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-@Controller
-@RequestMapping("/connexion")
 
-public class ConnexionController {
+
+
+import javax.servlet.http.HttpServlet;  
+
+@Controller
+@RequestMapping("/erreuracces")
+
+public class ErreurAccesController extends HttpServlet {   
 
 
     @RequestMapping(method = RequestMethod.GET)
-    public String afficherConnexion(final ModelMap pModel) {
+    public String afficherErreur(final ModelMap pModel) {
         //pModel.addAttribute("personne", "Regis");
-        return "connexion";
+        return "erreuracces";
     }
-}
 
+}
