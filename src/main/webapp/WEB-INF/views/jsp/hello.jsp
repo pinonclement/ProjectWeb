@@ -32,6 +32,7 @@
         
         <spring:url value="/connexion" var="connexion" />
         <spring:url value="/inscription" var="inscription" />
+         <spring:url value="/uploadsrt" var="uploadsrt" />
         <spring:url value="/" var="index" />
 
        
@@ -129,8 +130,8 @@
                                         <h1 align=center" color="red" >UPLOADER UN SOUS TITRE POUR CET éPISODE</h1>
                                         
                                         <spring:url value="/resources/core/picture/upload.png" var="uploadpng" />
-                                        
-                                      <img src="${uploadpng}" alt="uploader" style="width:150px;height:110px;">
+                                         <a href="${uploadsrt}">
+                                      <img  src="${uploadpng}" alt="uploader" style="width:150px;height:110px;"></a>
                                     
                                 </div>
                             </div>
@@ -150,7 +151,7 @@
                                   </div>
                                   
                                   <div class="controls">
-                                      <button id="contact-submit" type="submit" class="btn">Envoyer</button>
+                                      <button a href="uploadsrt" id="contact-submit" type="submit" class="btn">Envoyer</button>
                                   </div>
                               </form>
                             
@@ -159,28 +160,6 @@
                     </div>
                 </div>
             </div>
-            
-            <h2>List of Employees</h2>	
-	<table>
-		<tr>
-			<td>NAME</td><td>Joining Date</td><td>Salary</td><td>SSN</td><td></td>
-		</tr>
-		<c:forEach items="${videos}" var="video">
-			<tr>
-			<td>${video.videoid}</td>
-			<td>${video.nom}</td>
-			<td>${video.link}</td>
-			<td>${video.videoname}</td>
-			
-			
-			</tr>
-		</c:forEach>
-	</table>
-	<br/>
-	<a href="<c:url value='/new' />">Add New Employee</a>
-	
-	
-
 
 <spring:url value="/resources/core/js/jquery-1.9.1.js" var="jqueryjs" />
  
