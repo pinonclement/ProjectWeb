@@ -4,6 +4,7 @@ package com.web.springmvc.video;
 
 import java.io.File;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,8 @@ import com.github.axet.wget.info.DownloadInfo;
 import com.github.axet.wget.info.DownloadInfo.Part;
 import com.github.axet.wget.info.DownloadInfo.Part.States;
 import com.github.axet.wget.info.ex.DownloadInterruptedError;
+
+import junit.framework.Test;
 
 public class AppManagedDownload {
 
@@ -130,7 +133,17 @@ public class AppManagedDownload {
         // ex: http://www.youtube.com/watch?v=Nj6PFaDmp6c
         String url = args[0];
         // ex: /Users/axet/Downloads/
-        File path = new File(args[1]);
+        
+        final File f = new File(AppManagedDownload.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        File g = f.getParentFile().getParentFile();
+        
+        final String location = g.getAbsolutePath()+"\\resources\\core\\video";
+        System.out.println(location);   
+     
+    
+        File path = new File(location);
+        
+        
 
         try {
             final AtomicBoolean stop = new AtomicBoolean(false);
@@ -163,8 +176,9 @@ public class AppManagedDownload {
             // [OPTIONAL] call v.extract() only if you d like to get video title
             // or download url link before start download. or just skip it.
             v.extract(user, stop, notify);
-
+           
             System.out.println("Title: " + videoinfo.getTitle());
+           
             List<VideoFileInfo> list = videoinfo.getInfo();
             if (list != null) {
                 for (VideoFileInfo d : list) {
@@ -174,6 +188,7 @@ public class AppManagedDownload {
                     // d.targetFile = new File("/Downloads/CustomName.mp3");
                     // to set file name manually.
                     System.out.println("Download URL: " + d.getSource());
+                    
                 }
             }
 
