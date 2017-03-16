@@ -14,7 +14,8 @@ import com.web.springmvc.model.Soustitre;
 
 @Controller
 public class SoustitreController {
-	private SoustitreService soustitreservice;
+	@Autowired
+	SoustitreService soustitreservice;
 	
 	@RequestMapping(value="/soustitre",method=RequestMethod.GET)
 	public String listSoustitre(Model model,@PathVariable("idVideo") int idVideo){

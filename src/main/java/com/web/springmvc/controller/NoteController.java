@@ -14,7 +14,9 @@ import com.web.springmvc.service.NoteService;
 
 @Controller
 public class NoteController {
-	private NoteService noteservice;
+	
+	@Autowired
+	NoteService noteservice;
 	
 	
 	@RequestMapping(value="/note",method=RequestMethod.GET)

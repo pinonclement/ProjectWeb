@@ -19,7 +19,6 @@ public class InscriptionController extends HttpServlet {
 	private UserService userservice;
 	
 	
-	//for add
 	@RequestMapping(value="/user/add",method=RequestMethod.POST)
 	public String addUser(@ModelAttribute("user") User a){
 		if(a.getUserid()==0) //nouveau utilisateur, add it => on peut supprimer la condition si on génére auto un id

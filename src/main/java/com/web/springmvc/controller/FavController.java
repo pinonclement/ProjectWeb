@@ -15,7 +15,8 @@ import com.web.springmvc.service.FavService;
 @Controller
 public class FavController {
 
-	private FavService favservice;
+	@Autowired
+	FavService favservice;
 	
 	
 	@RequestMapping(value="/fav/add",method=RequestMethod.POST)
