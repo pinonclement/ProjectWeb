@@ -2,12 +2,14 @@ package com.web.springmvc.service;
 
 import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.web.springmvc.model.Note;
 import com.web.springmvc.dao.NoteDao;
 
 @Service
 public class NoteServiceImpl implements NoteService {
+	@Autowired
 	private NoteDao notedao;
 
 	@Transactional

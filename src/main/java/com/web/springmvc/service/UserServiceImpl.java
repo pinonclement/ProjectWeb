@@ -4,10 +4,13 @@ import org.springframework.transaction.annotation.Transactional;
 import com.web.springmvc.dao.UserDao;
 import com.web.springmvc.model.User;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
+	@Autowired
 	private UserDao userdao;
 	
 	

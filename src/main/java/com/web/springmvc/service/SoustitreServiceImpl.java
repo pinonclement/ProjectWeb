@@ -2,6 +2,7 @@ package com.web.springmvc.service;
 
 import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.web.springmvc.dao.SoustitreDao;
 import com.web.springmvc.model.Soustitre;
@@ -9,6 +10,7 @@ import com.web.springmvc.model.Soustitre;
 @Service
 public class SoustitreServiceImpl implements SoustitreService {
 
+	@Autowired
 	private SoustitreDao soustitredao;
 	
 	@Transactional
