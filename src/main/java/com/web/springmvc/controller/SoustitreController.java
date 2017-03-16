@@ -16,13 +16,6 @@ import com.web.springmvc.model.Soustitre;
 public class SoustitreController {
 	private SoustitreService soustitreservice;
 	
-	//génére auto soustitreservice
-	@Autowired(required=true)
-	@Qualifier(value="soustitreService")
-	public void setSoustitreService(SoustitreService a){
-		this.soustitreservice=a;
-	}
-	
 	@RequestMapping(value="/soustitre",method=RequestMethod.GET)
 	public String listSoustitre(Model model,@PathVariable("idVideo") int idVideo){
 		model.addAttribute("soustitre",new Soustitre());
@@ -37,10 +30,5 @@ public class SoustitreController {
 		return "redirect:/soustitre";
 	}
 	
-	@RequestMapping("/remove/{id}")
-	public String removeSoustitre(@PathVariable("idSoustitre") int idsoustitre){
-		this.soustitreservice.removeSoustitre(idsoustitre);
-		return "redirect:/soustitre";
-	}
 	
 }

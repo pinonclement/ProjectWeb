@@ -16,11 +16,6 @@ import com.web.springmvc.service.NoteService;
 public class NoteController {
 	private NoteService noteservice;
 	
-	@Autowired(required=true)
-	@Qualifier(value="noteService")
-	public void setNoteService(NoteService a){
-		this.noteservice=a;
-	}
 	
 	@RequestMapping(value="/note",method=RequestMethod.GET)
 	public String listNote(Model model, @PathVariable("idSoustitre") int idSoustitre){

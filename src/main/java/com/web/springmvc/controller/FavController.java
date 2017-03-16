@@ -17,11 +17,6 @@ public class FavController {
 
 	private FavService favservice;
 	
-	@Autowired(required=true)
-	@Qualifier(value="favService")
-	public void setFavService(FavService a){
-		this.favservice=a;
-	}
 	
 	@RequestMapping(value="/fav/add",method=RequestMethod.POST)
 	public String addFav(@ModelAttribute("fav") Fav a){
