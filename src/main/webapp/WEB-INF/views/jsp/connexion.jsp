@@ -106,6 +106,16 @@
 	<form action="" method="">		    
 		<input type="search" placeholder="épisode..">		    	
 	</form>
+		</form>
+<FORM>
+<SELECT name="nom" size="1">
+<OPTION>nom
+<OPTION>date
+<OPTION>durée
+<OPTION>arc
+
+</SELECT>
+</FORM>
 </section>
                                     <a href="#" class="btn">RECHERCHER</a>
                                 </div>

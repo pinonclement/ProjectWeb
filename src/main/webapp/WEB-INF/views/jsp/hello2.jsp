@@ -96,6 +96,16 @@
 	<form action="" method="">		    
 		<input type="search" placeholder="épisode..">		    	
 	</form>
+		</form>
+<FORM>
+<SELECT name="nom" size="1">
+<OPTION>nom
+<OPTION>date
+<OPTION>durée
+<OPTION>arc
+
+</SELECT>
+</FORM>
 </section>
                                     <a href="#" class="btn">RECHERCHER</a>
                                 </div>
@@ -131,7 +141,19 @@
                                     
                                 </div>
                             </div>
-                       
+                       <div class="contact-info">
+                            <h1>Notez cet épisode !</h1>
+							<form name="ratings">
+    <input type="button" name="btnLike" class="btn" value="Like">
+    <input type="button" name="btnDislike" class="btn" value="Dislike">
+</form><form name="ratings">
+
+    <input type="button" class="btn" name="Ajouter aux Favoris" value="Ajouter aux Favoris">
+
+</form>
+
+
+                        </div>
                         
                         <div class="contact-info">
                             <h1>Nous Contacter</h1>

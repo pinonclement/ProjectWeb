@@ -109,7 +109,19 @@
 	</form>
 	  <section class="webdesigntuts-workshop">
 	<form action="" method="">		    
-		<input type="search" placeholder="nom épisode..">		    	
+		<input type="search" placeholder="nom japonais..">		    	
+	</form>
+	<form action="" method="">		    
+		<input type="search" placeholder="durée..">		    	
+	</form>
+	<input list="sous titré">
+
+	<datalist id="sous titré">
+  <option value="oui">
+  <option value="non">
+</datalist>
+	<form action="" method="">		    
+		<input type="search" placeholder="date de diffusion..">		    	
 	</form>
 </section>
                                     <a href="#" class="btn">envoyer</a>
