@@ -27,7 +27,7 @@
         <spring:url value="/" var="index" />
         <spring:url value="/mdpoublie" var="mdpoublie" />
 
-		
+		<spring:url value="/rechercher" var="recherche" />
 		
 		<link href="${bootstrapCss}" rel="stylesheet" />
 		<link href="${responsiveCss}" rel="stylesheet" />
@@ -68,7 +68,7 @@
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
                                             <li ><a href="${index}">ACCUEIL</a></li>
-
+											  <li ><a href= "${recherche}">Rechercher un épisode</a></li>
                                             <li class="active"><a href="${connexion}">Se connecter</a></li>
                                             <li ><a href="${inscription}">S'enregistrer</a></li>
                                         </ul>

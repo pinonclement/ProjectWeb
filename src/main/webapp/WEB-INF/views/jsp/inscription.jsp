@@ -22,12 +22,12 @@
 		
 		<spring:url value="/resources/core/css/font-awesome.css" var="font1css" />
 		<spring:url value="/resources/core/css/font-awesome-ie7.css" var="font2css" />
-
+		<spring:url value="/rechercher" var="recherche" />
 		<spring:url value="/connexion" var="connexion" />
         <spring:url value="/inscription" var="inscription" />
         <spring:url value="/" var="index" />
         <spring:url value="/mdpoublie" var="mdpoublie" />
-		
+				<spring:url value="/rechercher" var="recherche" />
 		<link href="${bootstrapCss}" rel="stylesheet" />
 		<link href="${responsiveCss}" rel="stylesheet" />
 		
@@ -70,7 +70,7 @@
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
                                             <li ><a href="${index}">ACCUEIL</a></li>
-
+											<li ><a href= "${recherche}">Rechercher un épisode</a></li>
                                             <li><a href="${connexion}">Se connecter</a></li>
                                             <li class="active"><a href="#">S'enregistrer</a></li>
                                         </ul>

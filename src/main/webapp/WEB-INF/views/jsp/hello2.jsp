@@ -32,8 +32,9 @@
         
         <spring:url value="/connexion" var="connexion" />
         <spring:url value="/inscription" var="inscription" />
+         <spring:url value="/uploadsrt" var="uploadsrt" />
         <spring:url value="/" var="index" />
-
+		<spring:url value="/rechercher" var="recherche" />
        
        <spring:url value="/resources/core/js/modernizr-2.6.2-respond-1.1.0.min.js" var="modernjs" />
  
@@ -67,6 +68,7 @@
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
                                             <li class="active"><a href="${index}">ACCUEIL</a></li>
+											<li ><a href= "${recherche}">Rechercher un épisode</a></li>
                                         </ul>
                                     </div><!--/.nav-collapse -->
                                 </div>
@@ -88,29 +90,7 @@
 
                             </div>
                         </div>
-						  <div class="featured-heading">
-                            <div class="row-fluid">
-                                <div class="span10 offset1">
-                                    <h1>CHERCHER UN épisode</h1>
-                                    <section class="webdesigntuts-workshop">
-	<form action="" method="">		    
-		<input type="search" placeholder="épisode..">		    	
-	</form>
-		</form>
-<FORM>
-<SELECT name="nom" size="1">
-<OPTION>nom
-<OPTION>date
-<OPTION>durée
-<OPTION>arc
 
-</SELECT>
-</FORM>
-</section>
-                                    <a href="#" class="btn">RECHERCHER</a>
-                                </div>
-                            </div>
-                        </div>
                         <div class="banner-shadow">
                         <div class="banner">
                             <div class="carousel slide" id="myCarousel">
@@ -136,24 +116,12 @@
                                         <h1 align=center" color="red" >UPLOADER UN SOUS TITRE POUR CET éPISODE</h1>
                                         
                                         <spring:url value="/resources/core/picture/upload.png" var="uploadpng" />
-                                        
-                                      <img src="${uploadpng}" alt="uploader" style="width:150px;height:110px;">
+                                         <a href="${uploadsrt}">
+                                      <img  src="${uploadpng}" alt="uploader" style="width:150px;height:110px;"></a>
                                     
                                 </div>
                             </div>
-                       <div class="contact-info">
-                            <h1>Notez cet épisode !</h1>
-							<form name="ratings">
-    <input type="button" name="btnLike" class="btn" value="Like">
-    <input type="button" name="btnDislike" class="btn" value="Dislike">
-</form><form name="ratings">
-
-    <input type="button" class="btn" name="Ajouter aux Favoris" value="Ajouter aux Favoris">
-
-</form>
-
-
-                        </div>
+                       
                         
                         <div class="contact-info">
                             <h1>Nous Contacter</h1>
@@ -169,7 +137,7 @@
                                   </div>
                                   
                                   <div class="controls">
-                                      <button id="contact-submit" type="submit" class="btn">Envoyer</button>
+                                      <button a href="uploadsrt" id="contact-submit" type="submit" class="btn">Envoyer</button>
                                   </div>
                               </form>
                             

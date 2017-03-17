@@ -27,6 +27,7 @@
         <spring:url value="/inscription" var="inscription" />
         <spring:url value="/" var="index" />
         <spring:url value="/mdpoublie" var="mdpoublie" />
+        <spring:url value="/rechercher" var="recherche" />
 		
 		<link href="${bootstrapCss}" rel="stylesheet" />
 		<link href="${responsiveCss}" rel="stylesheet" />
@@ -70,7 +71,7 @@
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
                                             <li ><a href="${index}">ACCUEIL</a></li>
-
+<li ><a href= "${recherche}">Rechercher un épisode</a></li>
                                             <li><a href="${connexion}">Se connecter</a></li>
                                             <li class="active"><a href="#">S'enregistrer</a></li>
                                         </ul>

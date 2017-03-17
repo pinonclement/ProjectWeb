@@ -34,7 +34,7 @@
         <spring:url value="/inscription" var="inscription" />
          <spring:url value="/uploadsrt" var="uploadsrt" />
         <spring:url value="/" var="index" />
-
+		<spring:url value="/rechercher" var="recherche" />
        
        <spring:url value="/resources/core/js/modernizr-2.6.2-respond-1.1.0.min.js" var="modernjs" />
  
@@ -68,7 +68,7 @@
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
                                             <li class="active"><a href="${index}">ACCUEIL</a></li>
-
+											<li ><a href= "${recherche}">Rechercher un épisode</a></li>
                                             <li ><a href="${connexion}">Se connecter</a></li>
                                             <li ><a href="${inscription}">S'enregistrer</a></li>
                                         </ul>
@@ -92,29 +92,7 @@
 
                             </div>
                         </div>
-						  <div class="featured-heading">
-                            <div class="row-fluid">
-                                <div class="span10 offset1">
-                                    <h1>CHERCHER UN épisode</h1>
-                                    <section class="webdesigntuts-workshop">
-	<form action="" method="">		    
-		<input type="search" placeholder="épisode..">		    	
-	</form>
-		</form>
-<FORM>
-<SELECT name="nom" size="1">
-<OPTION>nom
-<OPTION>date
-<OPTION>durée
-<OPTION>arc
 
-</SELECT>
-</FORM>
-</section>
-                                    <a href="#" class="btn">RECHERCHER</a>
-                                </div>
-                            </div>
-                        </div>
                         <div class="banner-shadow">
                         <div class="banner">
                             <div class="carousel slide" id="myCarousel">

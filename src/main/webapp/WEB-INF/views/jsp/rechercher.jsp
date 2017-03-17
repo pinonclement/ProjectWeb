@@ -1,20 +1,20 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page session="false" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]> <!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <jsp:directive.page contentType="text/html;charset=UTF-8" />
+		<jsp:directive.page contentType="text/html;charset=UTF-8" />
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-       
-     <spring:url value="/resources/core/css/bootstrap.css" var="bootstrapCss" />
+      
+       <spring:url value="/resources/core/css/bootstrap.css" var="bootstrapCss" />
 		<spring:url value="/resources/core/css/bootstrap-responsive.css" var="responsiveCss" />
 		
 		 
@@ -27,7 +27,7 @@
         <spring:url value="/inscription" var="inscription" />
         <spring:url value="/" var="index" />
         <spring:url value="/mdpoublie" var="mdpoublie" />
-				<spring:url value="/rechercher" var="recherche" />
+		<spring:url value="/rechercher" var="recherche" />
 		
 		
 		<link href="${bootstrapCss}" rel="stylesheet" />
@@ -44,7 +44,7 @@
 		<script src="${modernjs}"></script>
 		
 	
-   </head>
+    </head>
     <body>
 	   
         <!--[if lt IE 7]>
@@ -52,11 +52,11 @@
         <![endif]-->
 
         <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-				<spring:url value="/resources/core/picture/gudetama.png" var="gudetamapng" />
-				<center><img  src="${gudetamapng}" alt="gudetama" align="middle" style="width:482px;height:169px;"></center>
-            <div class="container">
+ 					 <spring:url value="/resources/core/picture/gudetama.png" var="gudetamapng" />
+				<center><img  src="${gudetamapng}" alt="gudetama" align="middle" style="width:482px;height:169px;"></center>        
+				    <div class="container">
 
-               <div class="row-fluid">
+                <div class="row-fluid">
                 
                     <div class="span8 offset2">
                         <div class="site-header">
@@ -71,7 +71,9 @@
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
                                             <li ><a href="${index}">ACCUEIL</a></li>
-		  <li ><a href= "${recherche}">Rechercher un épisode</a></li>
+							<li  class="active"><a href= "${recherche}">Rechercher un épisode</a></li>
+                                            <li><a href="${connexion}">Se connecter</a></li>
+                                            <li ><a href="${inscription}">S'enregistrer</a></li>
                                         </ul>
                                     </div><!--/.nav-collapse -->
                                 </div>
@@ -93,19 +95,33 @@
 
                             </div>
                         </div>
-						  <div class="featured-heading">
+						  				  <div class="featured-heading">
                             <div class="row-fluid">
                                 <div class="span10 offset1">
-                                    <h1>CHoisir votre fichier de sous-titres</h1>
-										<form method="POST" action="uploadFile" enctype="multipart/form-data">
-		<center><input type="file" name="file"></center>
-		<center><input type="submit" value="Upload"></center>
+                                    <h1>CHERCHER UN épisode</h1>
                                     <section class="webdesigntuts-workshop">
+	<form action="" method="">		    
+		<input type="search" placeholder="épisode..">		    	
+	</form>
+		</form>
+<FORM>
+<SELECT name="nom" size="1">
+<OPTION>nom
+<OPTION>date
+<OPTION>durée
+<OPTION>arc
 
+</SELECT>
+</FORM>
 </section>
+                                    <a href="#" class="btn">RECHERCHER</a>
                                 </div>
                             </div>
                         </div>
+							
+						
+
+
 <spring:url value="/resources/core/js/jquery-1.9.1.js" var="jqueryjs" />
  
 <script src="${jqueryjs}"></script>
@@ -113,6 +129,7 @@
 <spring:url value="/resources/core/js/bootstrap.js" var="bootstrapjs" />
  
 <script src="${bootstrapjs}"></script>
+
 <script>
 $('#myCarousel').carousel({
     interval: 1800

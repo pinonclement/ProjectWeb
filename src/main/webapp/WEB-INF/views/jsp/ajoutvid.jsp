@@ -24,6 +24,7 @@
 		<spring:url value="/resources/core/css/font-awesome-ie7.css" var="font2css" />
 		
 		<spring:url value="/connexion" var="connexion" />
+		<spring:url value="/rechercher" var="recherche" />
         <spring:url value="/inscription" var="inscription" />
         <spring:url value="/" var="index" />
         <spring:url value="/mdpoublie" var="mdpoublie" />
@@ -72,8 +73,8 @@
                                     </a>
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
-                                            <li ><a href="index.html">ACCUEIL</a></li>
-
+                                         <li ><a href="${hello}">ACCUEIL</a></li>                                         
+  											<li ><a href="${recherche}">rechercher un episode</a></li>
                                         </ul>
                                     </div><!--/.nav-collapse -->
                                 </div>

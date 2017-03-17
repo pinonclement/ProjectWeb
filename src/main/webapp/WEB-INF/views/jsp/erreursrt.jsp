@@ -26,7 +26,7 @@
         <spring:url value="/inscription" var="inscription" />
         <spring:url value="/" var="index" />
         <spring:url value="/mdpoublie" var="mdpoublie" />
-		
+		     <spring:url value="/rechercher" var="recherche" />
 
 		
 		
@@ -70,8 +70,8 @@
                                     </a>
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
-                                            <li ><a href="index.html">ACCUEIL</a></li>
-
+                                            <li ><a href="${index}">ACCUEIL</a></li>
+											<li ><a href= "${recherche}">ACCUEIL</a></li>
                                         </ul>
                                     </div><!--/.nav-collapse -->
                                 </div>
