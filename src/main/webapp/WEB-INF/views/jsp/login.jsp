@@ -77,8 +77,6 @@
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
                                             <li ><a href="${index}">ACCUEIL</a></li>
-
-                                            <li><a href="${connexion}">Se connecter</a></li>
                                             <li class="active"><a href="#">S'enregistrer</a></li>
                                         </ul>
                                     </div><!--/.nav-collapse -->
@@ -108,12 +106,12 @@
 						<form action="${loginUrl}" method="post" class="form-horizontal">
 							<c:if test="${param.error != null}">
 								<div class="alert alert-danger">
-									<p>Invalid username and password.</p>
+									<p>Pseudo et mot de passe invalide</p>
 								</div>
 							</c:if>
 							<c:if test="${param.logout != null}">
 								<div class="alert alert-success">
-									<p>You have been logged out successfully.</p>
+									<p>Login fait avec succès</p>
 								</div>
 							</c:if>
 							<div class="input-group input-sm">
