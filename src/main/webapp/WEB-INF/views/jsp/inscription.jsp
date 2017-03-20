@@ -99,8 +99,7 @@
 						 <div class="featured-heading">
                             <div class="row-fluid">
                                     <h1>Créer votre compte</h1>
-                                    <section class="webdesigntuts-workshop">
-                                    <div class="form-container">
+                                    <section class="webdesigntuts-workshop">                                    
 				<form:form method="POST" modelAttribute="user" class="form-horizontal">
 				<label class="col-md-3 control-lable" for="email">Email</label>
 				<form:input type="text" path="email" id="email" class="form-control input-sm"/>
@@ -112,6 +111,7 @@
 				<form:select path="userProfiles" items="${roles}" multiple="true" itemValue="id" itemLabel="type" class="form-control input-sm"/>
 				<input type="submit" value="Register" class="btn btn-primary btn-sm"> or <a href="<c:url value='/hello' />">Cancel</a>
 				</form:form>
+				</div></div>
 </section>
                                    
 
