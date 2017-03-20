@@ -1,5 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -14,20 +16,20 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
        
-      	<spring:url value="/resources/core/css/bootstrap.css" var="bootstrapCss" />
-		<spring:url value="/resources/core/css/bootstrap-responsive.css" var="responsiveCss" />
-		
+      	<spring:url value="/static/css/bootstrap.css" var="bootstrapCss" />
+		<spring:url value="/static/css/bootstrap-responsive.css" var="responsiveCss" />
 		 
-		<spring:url value="/resources/core/css/custom-styles.css" var="customstylecss" />
+		<spring:url value="/static/css/custom-styles.css" var="customstylecss" />
 		
-		<spring:url value="/resources/core/css/font-awesome.css" var="font1css" />
-		<spring:url value="/resources/core/css/font-awesome-ie7.css" var="font2css" />
-		<spring:url value="/rechercher" var="recherche" />
+		<spring:url value="/static/css/font-awesome.css" var="font1css" />
+		<spring:url value="/static/css/font-awesome-ie7.css" var="font2css" />
+
 		<spring:url value="/connexion" var="connexion" />
         <spring:url value="/inscription" var="inscription" />
         <spring:url value="/" var="index" />
         <spring:url value="/mdpoublie" var="mdpoublie" />
-				<spring:url value="/rechercher" var="recherche" />
+			<spring:url value="/deco" var="deco" />
+			<spring:url value="/favoris" var="favori" />
 		<link href="${bootstrapCss}" rel="stylesheet" />
 		<link href="${responsiveCss}" rel="stylesheet" />
 		
@@ -37,7 +39,7 @@
         <link rel="stylesheet" href="${font2css}">
        
        
-       <spring:url value="/resources/core/js/modernizr-2.6.2-respond-1.1.0.min.js" var="modernjs" />
+       <spring:url value="/static/js/modernizr-2.6.2-respond-1.1.0.min.js" var="modernjs" />
  
 		<script src="${modernjs}"></script>
 		
@@ -50,7 +52,7 @@
         <![endif]-->
 
         <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-                 <spring:url value="/resources/core/picture/gudetama.png" var="gudetamapng" />
+                 <spring:url value="/static/picture/gudetama.png" var="gudetamapng" />
 
 				<center><img  src="${gudetamapng}" alt="gudetama" align="middle" style="width:482px;height:169px;"></center>
             <div class="container">
@@ -70,7 +72,7 @@
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
                                             <li ><a href="${index}">ACCUEIL</a></li>
-											<li ><a href= "${recherche}">Rechercher un épisode</a></li>
+
                                             <li><a href="${connexion}">Se connecter</a></li>
                                             <li class="active"><a href="#">S'enregistrer</a></li>
                                         </ul>
@@ -94,52 +96,33 @@
 
                             </div>
                         </div>
-						  <div class="featured-heading">
-                            <div class="row-fluid">
-                                <div class="span10 offset1">
-                                    <h1>CHERCHER UN épisode</h1>
-                                    <section class="webdesigntuts-workshop">
-	<form action="" method="">		    
-		<input type="search" placeholder="épisode..">		    	
-	</form>
-		</form>
-<FORM>
-<SELECT name="nom" size="1">
-<OPTION>nom
-<OPTION>date
-<OPTION>durée
-<OPTION>arc
-
-</SELECT>
-</FORM>
-</section>
-                                    <a href="#" class="btn">RECHERCHER</a>
-                                </div>
-                            </div>
-                        </div>
 						 <div class="featured-heading">
                             <div class="row-fluid">
-                                <div class="span10 offset1">
                                     <h1>Créer votre compte</h1>
                                     <section class="webdesigntuts-workshop">
-	<form action="process.jsp">		    
-	<input name="name" type="text" placeholder="pseudo..">	
-	<input  name="mail" type="text" placeholder="adresse mail..">		
-	<input  name="pass" type="password" placeholder="mot de passe..">
-	<input  name="pass2" type="password" placeholder="confirmation mot de passe..">
- 		<input type="submit" value ="envoyer" name="envoyer2" action="doPost()">
-	</form>
+                                    <div class="form-container">
+				<form:form method="POST" modelAttribute="user" class="form-horizontal">
+				<label class="col-md-3 control-lable" for="email">Email</label>
+				<form:input type="text" path="email" id="email" class="form-control input-sm"/>
+				<label class="col-md-3 control-lable" for="pseudo">Pseudo</label>
+				<form:input type="text" path="ssoId" id="pseudo" class="form-control input-sm"/>
+				<label class="col-md-3 control-lable" for="motdepasse">Mot de passe</label>
+				<form:input type="text" path="password" id="motdepasse" class="form-control input-sm"/>
+				<label class="col-md-3 control-lable" for="userProfiles">Roles</label>
+				<form:select path="userProfiles" items="${roles}" multiple="true" itemValue="id" itemLabel="type" class="form-control input-sm"/>
+				<input type="submit" value="Register" class="btn btn-primary btn-sm"> or <a href="<c:url value='/hello' />">Cancel</a>
+				</form:form>
 </section>
                                    
 
 
 
 
-<spring:url value="/resources/core/js/jquery-1.9.1.js" var="jqueryjs" />
+<spring:url value="/static/js/jquery-1.9.1.js" var="jqueryjs" />
  
 <script src="${jqueryjs}"></script>
 
-<spring:url value="/resources/core/js/bootstrap.js" var="bootstrapjs" />
+<spring:url value="/static/js/bootstrap.js" var="bootstrapjs" />
  
 <script src="${bootstrapjs}"></script>
 

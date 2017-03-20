@@ -1,5 +1,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -14,15 +18,15 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
       
-       <spring:url value="/resources/core/css/bootstrap.css" var="bootstrapCss" />
-		<spring:url value="/resources/core/css/bootstrap-responsive.css" var="responsiveCss" />
+       <spring:url value="/static/css/bootstrap.css" var="bootstrapCss" />
+		<spring:url value="/static/css/bootstrap-responsive.css" var="responsiveCss" />
 		
 		 
-		<spring:url value="/resources/core/css/custom-styles.css" var="customstylecss" />
+		<spring:url value="/static/css/custom-styles.css" var="customstylecss" />
 		
-		<spring:url value="/resources/core/css/font-awesome.css" var="font1css" />
-		<spring:url value="/resources/core/css/font-awesome-ie7.css" var="font2css" />
-		
+		<spring:url value="/static/css/font-awesome.css" var="font1css" />
+		<spring:url value="/static/css/font-awesome-ie7.css" var="font2css" />
+		<spring:url value="/deco" var="deco" />
 		<spring:url value="/connexion" var="connexion" />
         <spring:url value="/inscription" var="inscription" />
         <spring:url value="/" var="index" />
@@ -39,7 +43,7 @@
         <link rel="stylesheet" href="${font2css}">
 
        
-       <spring:url value="/resources/core/js/modernizr-2.6.2-respond-1.1.0.min.js" var="modernjs" />
+       <spring:url value="/static/js/modernizr-2.6.2-respond-1.1.0.min.js" var="modernjs" />
  
 		<script src="${modernjs}"></script>
 		
@@ -52,7 +56,7 @@
         <![endif]-->
 
         <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
- 					 <spring:url value="/resources/core/picture/gudetama.png" var="gudetamapng" />
+ 					 <spring:url value="/static/picture/gudetama.png" var="gudetamapng" />
 				<center><img  src="${gudetamapng}" alt="gudetama" align="middle" style="width:482px;height:169px;"></center>        
 				    <div class="container">
 
@@ -72,8 +76,8 @@
                                         <ul class="nav">
                                             <li ><a href="${index}">ACCUEIL</a></li>
 							<li  class="active"><a href= "${recherche}">Rechercher un épisode</a></li>
-                                            <li><a href="${connexion}">Se connecter</a></li>
-                                            <li ><a href="${inscription}">S'enregistrer</a></li>
+													   <li ><a href= "${favori}">Favoris</a></li>
+                                            <li ><a href= "${deco}">se deconnecter</a></li>
                                         </ul>
                                     </div><!--/.nav-collapse -->
                                 </div>
@@ -100,33 +104,39 @@
                                 <div class="span10 offset1">
                                     <h1>CHERCHER UN épisode</h1>
                                     <section class="webdesigntuts-workshop">
-	<form action="" method="">		    
-		<input type="search" placeholder="épisode..">		    	
-	</form>
-		</form>
-<FORM>
-<SELECT name="nom" size="1">
-<OPTION>nom
-<OPTION>date
-<OPTION>durée
-<OPTION>arc
-
-</SELECT>
-</FORM>
+	<form:form  method="POST">		    
+		<select name="filtre" size="1">
+		<OPTION>Date d'ajout
+		<OPTION>Duree
+		<OPTION>arc
+		</select>
+		<input type="submit" value="rechercher" class="btn btn-primary btn-sm"> or <a href="<c:url value='/hello2' />">Retour Accueil</a>		    	
+	</form:form>
 </section>
-                                    <a href="#" class="btn">RECHERCHER</a>
+                                   
                                 </div>
                             </div>
                         </div>
-							
+                        
+  <h1>Resultat Recherche :</h1>
+  
+  
+  
+ <% if ( session.getAttribute("listevideo")!=null){ %>
+<c:forEach var="lol" items='<%= session.getAttribute("listevideo")%>'>
+<p><c:out value="${lol.nom}"/></p>
+<p><c:out value="${lol.durée}"/></p>
+</c:forEach>
+<%} %>
+
 						
 
 
-<spring:url value="/resources/core/js/jquery-1.9.1.js" var="jqueryjs" />
+<spring:url value="/static/js/jquery-1.9.1.js" var="jqueryjs" />
  
 <script src="${jqueryjs}"></script>
 
-<spring:url value="/resources/core/js/bootstrap.js" var="bootstrapjs" />
+<spring:url value="/static/js/bootstrap.js" var="bootstrapjs" />
  
 <script src="${bootstrapjs}"></script>
 

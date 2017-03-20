@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -13,30 +14,32 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         
-       <spring:url value="/resources/core/css/bootstrap.css" var="bootstrapCss" />
-		<spring:url value="/resources/core/css/bootstrap-responsive.css" var="responsiveCss" />
+       <spring:url value="/static/css/bootstrap.css" var="bootstrapCss" />
+		<spring:url value="/static/css/bootstrap-responsive.css" var="responsiveCss" />
 		
 		 
-		<spring:url value="/resources/core/css/custom-styles.css" var="customstylecss" />
+		<spring:url value="/static/css/custom-styles.css" var="customstylecss" />
 		
-		<spring:url value="/resources/core/css/font-awesome.css" var="font1css" />
-		<spring:url value="/resources/core/css/font-awesome-ie7.css" var="font2css" />
+		<spring:url value="/static/css/font-awesome.css" var="font1css" />
+		<spring:url value="/static/css/font-awesome-ie7.css" var="font2css" />
 			
 		<link href="${bootstrapCss}" rel="stylesheet" />
 		<link href="${responsiveCss}" rel="stylesheet" />
 		
         <link rel="stylesheet" href="${customstylecss}">
         <link rel="stylesheet" href="${font1css}">
-        
+             <spring:url value="/deco" var="deco" />
+              <spring:url value="/favoris" var="favori" />
         <link rel="stylesheet" href="${font2css}">
-        
+       <spring:url value="/deco" var="deco" />
+		<spring:url value="/favoris" var="favori" />
         <spring:url value="/connexion" var="connexion" />
         <spring:url value="/inscription" var="inscription" />
          <spring:url value="/uploadsrt" var="uploadsrt" />
         <spring:url value="/" var="index" />
-		<spring:url value="/rechercher" var="recherche" />
+		<spring:url value="/recherche" var="recherche" />
        
-       <spring:url value="/resources/core/js/modernizr-2.6.2-respond-1.1.0.min.js" var="modernjs" />
+       <spring:url value="/static/js/modernizr-2.6.2-respond-1.1.0.min.js" var="modernjs" />
  
 		<script src="${modernjs}"></script>
 		
@@ -49,7 +52,7 @@
         <![endif]-->
 
         <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-         <spring:url value="/resources/core/picture/gudetama.png" var="gudetamapng" />
+         <spring:url value="/static/picture/gudetama.png" var="gudetamapng" />
 				<center><img  src="${gudetamapng}" alt="gudetama" align="middle" style="width:482px;height:169px;"></center>
             <div class="container">
 
@@ -67,8 +70,10 @@
                                     </a>
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
-                                            <li class="active"><a href="${index}">ACCUEIL</a></li>
+                                            <li class="active"><a href="${index}">ACCUEIL</a></li>                                       
 											<li ><a href= "${recherche}">Rechercher un épisode</a></li>
+											   <li ><a href= "${favori}">Favoris</a></li>
+											  <li ><a href= "${deco}">se deconnecter</a></li>
                                         </ul>
                                     </div><!--/.nav-collapse -->
                                 </div>
@@ -115,9 +120,12 @@
 									
                                         <h1 align=center" color="red" >UPLOADER UN SOUS TITRE POUR CET éPISODE</h1>
                                         
-                                        <spring:url value="/resources/core/picture/upload.png" var="uploadpng" />
-                                         <a href="${uploadsrt}">
-                                      <img  src="${uploadpng}" alt="uploader" style="width:150px;height:110px;"></a>
+                                        <spring:url value="/static/picture/upload.png" var="uploadpng" />
+                                         <sec:authorize access="isRememberMe()">
+                                        	 <a href="${uploadsrt}">
+                                        	 <img  src="${uploadpng}" alt="uploader" style="width:150px;height:110px;"></a>
+                                         </sec:authorize>
+                                      
                                     
                                 </div>
                             </div>
@@ -147,11 +155,11 @@
                 </div>
             </div>
 
-<spring:url value="/resources/core/js/jquery-1.9.1.js" var="jqueryjs" />
+<spring:url value="/static/js/jquery-1.9.1.js" var="jqueryjs" />
  
 <script src="${jqueryjs}"></script>
 
-<spring:url value="/resources/core/js/bootstrap.js" var="bootstrapjs" />
+<spring:url value="/static/js/bootstrap.js" var="bootstrapjs" />
  
 <script src="${bootstrapjs}"></script>
 

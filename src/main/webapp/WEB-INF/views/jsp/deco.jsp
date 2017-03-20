@@ -4,17 +4,17 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]> <!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
+		<jsp:directive.page contentType="text/html;charset=UTF-8" />
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <jsp:directive.page contentType="text/html;charset=UTF-8" />
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-       
-        
-        <spring:url value="/static/css/bootstrap.css" var="bootstrapCss" />
+      
+       <spring:url value="/static/css/bootstrap.css" var="bootstrapCss" />
 		<spring:url value="/static/css/bootstrap-responsive.css" var="responsiveCss" />
 		
 		 
@@ -24,13 +24,10 @@
 		<spring:url value="/static/css/font-awesome-ie7.css" var="font2css" />
 		
 		<spring:url value="/connexion" var="connexion" />
-		<spring:url value="/rechercher" var="recherche" />
         <spring:url value="/inscription" var="inscription" />
         <spring:url value="/" var="index" />
         <spring:url value="/mdpoublie" var="mdpoublie" />
-		<spring:url value="/deco" var="deco" />
-		<spring:url value="/favoris" var="favori" />
-
+		<spring:url value="/rechercher" var="recherche" />
 		
 		
 		<link href="${bootstrapCss}" rel="stylesheet" />
@@ -40,7 +37,6 @@
         <link rel="stylesheet" href="${font1css}">
         
         <link rel="stylesheet" href="${font2css}">
-        
 
        
        <spring:url value="/static/js/modernizr-2.6.2-respond-1.1.0.min.js" var="modernjs" />
@@ -56,9 +52,9 @@
         <![endif]-->
 
         <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-         <spring:url value="/static/picture/gudetama.png" var="gudetamapng" />
-				<center><img  src="${gudetamapng}" alt="gudetama" align="middle" style="width:482px;height:169px;"></center>
-            <div class="container">
+ 					 <spring:url value="/static/picture/gudetama.png" var="gudetamapng" />
+				<center><img  src="${gudetamapng}" alt="gudetama" align="middle" style="width:482px;height:169px;"></center>        
+				    <div class="container">
 
                 <div class="row-fluid">
                 
@@ -74,10 +70,9 @@
                                     </a>
                                     <div class="nav-collapse collapse">
                                         <ul class="nav">
-                                            <li class="active"><a href="${index}">ACCUEIL</a></li>                                       
-											<li ><a href= "${recherche}">Rechercher un épisode</a></li>
-											   <li ><a href= "${favori}">Favoris</a></li>
-											  <li ><a href= "${deco}">se deconnecter</a></li>
+                                            <li ><a href="${index}">ACCUEIL</a></li>
+                                            <li class="active"><a href="${connexion}">Se connecter</a></li>
+                                            <li ><a href="${inscription}">S'enregistrer</a></li>
                                         </ul>
                                     </div><!--/.nav-collapse -->
                                 </div>
@@ -102,34 +97,12 @@
 						  <div class="featured-heading">
                             <div class="row-fluid">
                                 <div class="span10 offset1">
-                                    <h1>AJOUTER UN épisode</h1>
-                                    <section class="webdesigntuts-workshop">
-</form>
-	  <section class="webdesigntuts-workshop">
-	<form action="" method="">		    
-		<input type="search" placeholder="arc épisode..">		    	
-	</form>
-	  <section class="webdesigntuts-workshop">
-	<form action="" method="">		    
-		<input type="search" placeholder="nom japonais..">		    	
-	</form>
-	<form action="" method="">		    
-		<input type="search" placeholder="durée (en seconde)..">		    	
-	</form>
-	<form action="" method="">		    
-		<input type="search" placeholder="date de diffusion (AAAA-MM-JJ)">		    	
-	</form>
-	<form method="POST" action="ajoutvid/uploadFile" enctype="multipart/form-data">
-		<center><input type="file" name="file"></center>
-		Name:(NOM-PSEUDO.mp4)  <input type="text" name="name"><br /> <br /> 
-		 <center><input type="submit" value="Upload" class="btn"></center>
-</section>
-                                    <a href="#" class="btn">envoyer</a>
+                                    <h1>DECONNEXION Réussie</h1>
                                 </div>
                             </div>
-                        </div>
+							
 						
-						
+
 
 <spring:url value="/static/js/jquery-1.9.1.js" var="jqueryjs" />
  
@@ -138,6 +111,7 @@
 <spring:url value="/static/js/bootstrap.js" var="bootstrapjs" />
  
 <script src="${bootstrapjs}"></script>
+
 <script>
 $('#myCarousel').carousel({
     interval: 1800
